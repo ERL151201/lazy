@@ -1,8 +1,8 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
     mount: {
-        public: '/lazy',
-        src: '/',
+        public: '/',
+        src: '/src',
     },
     buildOptions: {
         baseUrl: '',
