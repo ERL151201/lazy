@@ -2,7 +2,7 @@
 module.exports = {
     mount: {
         public: '/lazy',
-        src: '/_dist_',
+        src: '/',
     },
     buildOptions: {
         baseUrl: '',
