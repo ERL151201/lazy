@@ -1,6 +1,6 @@
-@import "../_snowpack/pkg/tailwindcss/dist/base.css";
-@import "../_snowpack/pkg/tailwindcss/dist/components.css";
-@import "../_snowpack/pkg/tailwindcss/dist/utilities.css";
+@import "./_snowpack/pkg/tailwindcss/dist/base.css";
+@import "./_snowpack/pkg/tailwindcss/dist/components.css";
+@import "./_snowpack/pkg/tailwindcss/dist/utilities.css";
 .boton {
     border: 1px solid #2e518b;
     /*anchura, estilo y color borde*/
