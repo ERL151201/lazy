@@ -1,38 +1,21 @@
 import { registerImage } from "./lazy";
+import { createImageNodes } from "./imagenes";
 
+// Cargue las imagenes existentes cuando cargue la página
+const allImages = document.querySelectorAll("img[data-src]");
+allImages.forEach(registerImage);
 
+// Agregar nuevas imagenes
+const imageContainer = document.querySelector("#images");
+const button = document.querySelector("button[type='submit']");
+button.addEventListener("click", () => {
+    const [node, image] = createImageNodes();
+    registerImage(image);
+    imageContainer.append(node);
+});
 
-const minimum = 1;
-const maximum = 122;
-
-const random = () => Math.floor(Math.random() * (maximum - minimum)) + minimum
-    //Crear imagen
-const createImageNode = () => {
-    const container = document.createElement("div");
-    container.className = "p-4";
-
-    const imagen = document.createElement("img");
-    imagen.className = 'mx-auto';
-    imagen.width = '320';
-    imagen.dataset.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
-
-    container.appendChild(imagen);
-
-    return container;
-};
-
-
-const nuevaImagen = createImageNode()
-const mountNode = document.getElementById('images');
-
-const addButton = document.querySelector("button")
-
-const addImage = () => {
-    const newImage = createImageNode();
-    mountNode.appendChild(newImage);
-    registerImage(newImage);
-};
-
-addButton.addEventListener("click", addImage);
-
-//agregar #imagen
+// Limpiar
+const clean = document.querySelector("button[type='reset']");
+clean.addEventListener("click", () => {
+    imageContainer.innerHTML = "";
+});
